@@ -97,13 +97,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
 	int nScreenX = GetSystemMetrics(SM_CXSCREEN);
 	int nScreenY = GetSystemMetrics(SM_CYSCREEN);
 	SetRect(&rcWnd, 0, 0, nScreenX, nScreenY);
-	SetRect(&rcWnd, 0, 0, 800, 600);
+	SetRect(&rcWnd, 0, 0, 1000, 400);
 	int nY = (nScreenY - rcWnd.bottom) / 2;
 	if (nY < 0)
 		nY = 0;
 	SetWindowPos(hWnd, HWND_BOTTOM, (nScreenX - rcWnd.right) / 2 - 200, nY, rcWnd.right, rcWnd.bottom, 0);
 
-//	bmpReader.OpenFile(_T("test01.bmp"));
+	bmpReader.OpenFile(_T("test01.bmp"));
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);

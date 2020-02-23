@@ -15,12 +15,14 @@ protected:
 
 
 protected:
-	BITMAPINFOHEADER	m_bmpHeader;
-	LPBYTE				m_pBmpBuff;
+	BITMAPINFOHEADER	m_headFile;
+	unsigned char *		m_pBmpFile;
+
+	BITMAPINFOHEADER	m_headData;
+	int *				m_pBmpData;
 
 	HDC					m_hMemDC;
 	HBITMAP				m_hBmpFile;
-
-
+	HBITMAP				m_hBmpData;
 };
 
