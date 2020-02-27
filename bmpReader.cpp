@@ -104,6 +104,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) {
 	SetWindowPos(hWnd, HWND_BOTTOM, (nScreenX - rcWnd.right) / 2 - 200, nY, rcWnd.right, rcWnd.bottom, 0);
 
 	bmpReader.OpenFile(_T("test01.bmp"));
+	//bmpReader.Convolute();
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
@@ -169,6 +170,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         EndPaint(hWnd, &ps);
     }
     break;
+
+	case WM_ERASEBKGND:
+		return FALSE;
+
     case WM_DESTROY: 
         PostQuitMessage(0);
     break;

@@ -8,6 +8,7 @@ public:
 	virtual ~CBmpReader();
 
 	virtual int		OpenFile(const TCHAR * pBmpFile);
+	void			Convolute();
 	virtual int		DrawBmp(HDC hDC, int nW, int nH);
 
 protected:
@@ -19,7 +20,10 @@ protected:
 	unsigned char *		m_pBmpFile;
 
 	BITMAPINFOHEADER	m_headData;
-	int *				m_pBmpData;
+	unsigned char *		m_pBmpData;
+	double				m_dKernelSmooth[3][3];
+	int					m_nKernelX[3][3];
+	int					m_nKernelY[3][3];
 
 	HDC					m_hMemDC;
 	HBITMAP				m_hBmpFile;
